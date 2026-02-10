@@ -168,7 +168,7 @@ export default function CalendarView() {
               type="submit"
               className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition"
             >
-              Add Event
+              Add Event (+)
             </button>
           </form>
         </div>
