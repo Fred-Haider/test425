@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { eventStore } from '@/lib/eventStore';
 import { CalendarEvent } from '@/types/calendar';
+import { nanoid } from 'nanoid';
 
 // GET all events
 export async function GET() {
@@ -21,7 +22,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     
     const newEvent: CalendarEvent = {
-      id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
+      id: nanoid(),
       ...body,
       createdAt: new Date().toISOString(),
     };

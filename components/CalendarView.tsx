@@ -222,9 +222,11 @@ export default function CalendarView() {
                     <form
                       onSubmit={(e) => {
                         e.preventDefault();
-                        const email = (e.target as any).email.value;
+                        const formElement = e.target as HTMLFormElement;
+                        const emailInput = formElement.elements.namedItem('email') as HTMLInputElement;
+                        const email = emailInput.value;
                         handleShareEvent(event.id, email);
-                        (e.target as any).reset();
+                        formElement.reset();
                       }}
                       className="flex gap-2"
                     >
